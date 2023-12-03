@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-fm8Y8+57eBPV09LL5YI5e2H2Exblk8FmR5aR0UGp3DvThc2zY+qLOFq3DWn5yQ+he1Fk/3vUx/5PW8a6ITu5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('nn.jpg'); 
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        background-color: rgba(9, 1, 1, 0.916);
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        transition: 0.3s;
+      }
+      .site-name {
+        font-size: 24px;
+        font-weight: 700;
+        transition: text-shadow 0.3s;
+      }
+      .site-name:hover {
+        text-shadow: 0 0 10px rgba(16, 14, 14, 0.297);
+      }
+      .glow-effect:hover {
+        text-shadow: 0 0 10px rgba(225, 11, 11, 0.043);
+      }
+      .menu-btn {
+        cursor: pointer;
+        font-size: 20px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+      .menu-btn:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
+      /* .side-menu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(247, 243, 243, 0);
+        padding-top: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s;
+      } */
+  
+      .side-menu {
+    position: fixed;
+    top: 60px; 
+    width: 250px;
+    height: 100%;
+    background-color: rgba(247, 243, 243, 0.073);
+    padding-top: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s;
+ }  
+
+
+      .menu-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .menu-items li {
+        padding: 15px;
+        color: #f3efef;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .menu-items li:hover {
+        background-color: #00000056;
+      }
+  
+      .grid-container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        justify-content: space-evenly;
+      }
+  
+      section {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: rgba(12, 1, 1, 0.3); 
+        box-shadow: 0 0 10px rgba(181, 49, 49, 0.1);
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+        width: 100%;
+      }
+  
+      section:hover {
+        box-shadow: 0 0 20px rgba(18, 5, 5, 0.2);
+      }
+  
+      section h2 {
+        color: #eeeaea;
+        border-bottom: 2px solid #f4f1f1;
+        padding-bottom: 10px;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+  
+      .pink-shade {
+    background-color: rgba(229, 11, 11, 0);
+    color: #fff; 
+  }
+  
+  section.home h2 {
+    color: #f1f0f0;
+    border-bottom: 2px solid #00000000;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+      .pistol-shade {
+        background-color: rgba(192, 197, 255, 0);
+      }
+  
+      .button {
+        background-color: #33333355;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .button:hover {
+        background-color:rgba(0, 0, 0, 0.087);
+      }
+  
+      .hidden {
+        display: none;
+      }
+  
+      .hide-header {
+        height: 0;
+        overflow: hidden;
+      }
+  
+      footer {
+        background-color: #040404;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+  
+      .qualification,
+      .projects,
+      .skills,
+      .hobbies,
+      .portfolio,
+      .contact,
+      .certifications,
+      .experience,
+      .achievements,
+      .contributions,
+      .personal,
+      .residency,
+      .blog {
+        margin-top: 20px;
+        color-scheme: rgba(9, 9, 9, 0.187);
+    color: #f1f0f0;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 70;
+  }
+      
+  
+      .portfolio ul,
+      .blog ul {
+        list-style: none;
+        padding: 0;
+      }
+  
+      .portfolio li,
+      .blog li {
+        margin-bottom: 10px;
+      }
+  
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+  
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        border: 1px solid #060505;
+      }
+      .hide-header {
+    height: 0;
+    overflow: hidden;
+  }
+  
+    </style> <!-- Your existing head content remains unchanged -->
+</head>
+
+<body>
+
+  <header>
+    <div class="menu-btn" onclick="toggleSideMenu()">☰ AG</div>
+    <div class="site-name glow-effect">AG</div>
+  </header>
+
+   <!-- Your existing side menu content remains unchanged -->
+  </div>
+
+  <div class="side-menu" style="font-size: 20px;">
+    <ul class="menu-items">
+      <li onclick="showContent('.home')">Home</li>
+      <li onclick="showContent('.qualification')">Qualifications</li>
+      <li onclick="showContent('.certifications')">Certifications</li>
+      <li onclick="showContent('.skills')">Skills</li>
+      <li onclick="showContent('.experience')">Experience</li>
+      <li onclick="showContent('.achievements')">Achievements</li>
+      <li onclick="showContent('.contributions')">Contributions</li>
+      <li onclick="showContent('.hobbies')">Hobbies</li>
+      <li onclick="showContent('.blog')">Blog</li>
+      <li onclick="showContent('.contact')">Contact</li>
+      <li onclick="showContent('.resume')">resume</li>
+    </ul>
+  </div>
+  
+  <div class="social-icons">
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+
+  <div class="grid-container">
+    <!-- Adjusted styles for the home section -->
+    <section class="home pink-shade" style="text-align: center; font-size: 2rem;">
+      <h2>Welcome to My Portfolio</h2>
+      <p><H4>CLICK TO EXPLORE.....</h4></p>
+      <p>Explore my journey, skills, and achievements.</p>
+    </section>
+    <section class="qualification pink-shade hidden">
+        <h2>Qualifications</h2>
+        <ul>
+          <li>Bachelor of Technology (Computer Science and Engineering) [Batch '26] - Maharashtra Institute of Technology An autonomous institute, Aurangabad Maharashtra India 431001</li>
+          <li>HSC-2020-2022 - Brijlal Biani Science College, ravi Nagar Amravati 444605</li>
+          <li>SSC-2020 - yashwant Education Society English School Nanggaon Khandeshwar 444708 Dist. Amravati State Maharashtra India</li>
+        </ul>
+      </section>
+  
+      <section class="resume pink-shade hidden">
+        <h2>resume</h2>
+        <ul>
+          <li>Bachelor of Technology (Computer Science and Engineering) [Batch '26] - Maharashtra Institute of Technology An autonomous institute, Aurangabad Maharashtra India 431001</li>
+          <li>HSC-2020-2022 - Brijlal Biani Science College, ravi Nagar Amravati 444605</li>
+          <li>SSC-2020 - yashwant Education Society English School Nanggaon Khandeshwar 444708 Dist. Amravati State Maharashtra India</li>
+        </ul>
+      </section>
+  
+      <section class="projects pistol-shade hidden">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            Portfolio Project: The portfolio project showcases my web development skills with an aesthetically pleasing design. Each section glows on hover and reveals detailed information upon clicking.
+          </li>
+          <li>
+            Weather Website Project: The weather displaying website offers real-time weather information using HTML, CSS, and JavaScript for an intuitive browsing experience.
+          </li>
+        </ul>
+      </section>
+  
+      <section class="portfolio pink-shade hidden">
+        <h2>Portfolio</h2>
+        <ul>
+          <li>
+            Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut odio tellus.
+          </li>
+          <li>
+            Project 2: Nullam eu elit vel nunc molestie sodales. Fusce varius, elit in condimentum congue.
+          </li>
+        </ul>
+      </section>
+  
+      <section class="blog pistol-shade hidden">
+        <h2>Blog</h2>
+        <ul>
+          <li>
+            <strong>Post Title 1</strong><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut odio tellus.
+          </li>
+          <li>
+            <strong>Post Title 2</strong><br>
+            Nullam eu elit vel nunc molestie sodales. Fusce varius, elit in condimentum congue.
+          </li>
+        </ul>
+      </section>
+  
+      <section class="contact pink-shade hidden">
+        <h2>Contact</h2>
+        <div class="contact-form">
+          <input type="text" class="form-input" placeholder="AG">
+          <input type="email" class="form-input" placeholder="Your Email">
+          <textarea class="form-textarea" placeholder="Your Message"></textarea>
+          <button class="button">Send Message</button>
+        </div>
+      </section>
+  
+      <section class="certifications pistol-shade hidden">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Certification in Web Development - XYZ Online Academy</li>
+          <li>Java Programming Certification - ABC Institute</li>
+        </ul>
+      </section>
+  
+      <section class="experience pink-shade hidden">
+        <h2>Experience</h2>
+        <ul>
+          <li>web Developer Intern - intern Career</li>
+          <li>Front-end Developer Intern- ABC Web Services</li>
+          <!-- Add more experience details as needed -->
+        </ul>
+      </section>
+  
+      <section class="achievements pistol-shade hidden">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Participation certificate in college competition</li>
+          <li>Outstanding Performance Award - College Hackathon</li>
+          <li>First prize in ui ux design online exam</li>
+          <li>Second prize on coding competitions</li>
+          <!-- Add more achievement details as needed -->
+        </ul>
+      </section>
+  
+      <section class="contributions pink-shade hidden">
+        <h2>Contributions</h2>
+        <ul>
+          <li>Open Source Project Contributor - GitHub</li>
+          <li>Community Volunteer - Local Coding Club</li>
+          <li>Open Source Project Contributor - GitHub,linkeedin</li>
+          <li>Community Volunteer -  velocity Coding Club</li>
+          <!-- Add more contribution details as needed -->
+        </ul>
+      </section>
+  
+  
+    <!-- Your existing sections remain unchanged -->
+
+  </div>
+
+  <!-- <footer>
+    <p>Contact me at: ayushgulhane2004@Gmail.com | Phone: 0000000000 <i class="fa-brands fa-instagram"></i> </p>
+    <p<i class="fa-brands fa-github"></i></p>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge">
+<meta name="viewport" content="width=device-
+width, initial-scale=1.0">
+<title>HTML Copyright Symbol</title>
+</head>
+<body>
+<span>&copy; DESTINY.23</span>
+</body>
+</html>
+  </footer> -->
+  <footer>
+    <p>Contact me at: ayushgulhane2004@Gmail.com | Phone: 0000000000</p>
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; DESTINY.23</p>
+</footer>
+
+  <script>
+    function toggleVisibility(section) {
+      var element = document.querySelector(section);
+      element.classList.toggle('hidden');
+    }
+  
+    function toggleSideMenu() {
+      var sideMenu = document.querySelector('.side-menu');
+      var header = document.querySelector('header');
+  
+      if (sideMenu.style.left === '' || sideMenu.style.left === '-250px') {
+        sideMenu.style.left = '0';
+        header.classList.add('hide-header');
+      } else {
+        sideMenu.style.left = '-250px';
+        header.classList.remove('hide-header');
+      }
+    }
+  
+    function showContent(section) {
+      document.querySelectorAll('.grid-container section').forEach(function (el) {
+        el.classList.add('hidden');
+      });
+  
+      var element = document.querySelector(section);
+      element.classList.remove('hidden');
+  
+      // Removed the check for '.glow-effect'
+  
+      toggleSideMenu();
+    }
+  
+    document.addEventListener('click', function (event) {
+      var sideMenu = document.querySelector('.side-menu');
+      var header = document.querySelector('header');
+  
+      if (
+        !sideMenu.contains(event.target) &&
+        event.target !== document.querySelector('.menu-btn') &&
+        event.target !== document.querySelector('.side-menu')
+      ) {
+        toggleSideMenu();
+      }
+    });
+
+    function toggleSideMenu() {
+  var sideMenu = document.querySelector('.side-menu');
+  
+  if (sideMenu.style.left === '' || sideMenu.style.left === '-250px') {
+    sideMenu.style.left = '0';
+  } else {
+    sideMenu.style.left = '-250px';
+  }
+}
+// Your existing JavaScript code remains unchanged
+  </script>
+
+</body>
+
+</html>
